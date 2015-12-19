@@ -19,9 +19,9 @@ RUN export DEBIAN_FRONTEND=noninteractive && \
 RUN sed 's/extension=mcrypt.so/;extension=mcrypt.so/g' -i /etc/php/mods-available/mcrypt.ini
 
 # increase performance
-RUN sed 's/pm.max_children = 5/;pm.max_children = 50/g' -i /etc/php/7.0/fpm/pool.d/www.conf
-RUN sed 's/pm.start_servers = 2/;pm.start_servers = 10/g' -i /etc/php/7.0/fpm/pool.d/www.conf
-RUN sed 's/pm.max_spare_servers = 3/;pm.max_spare_servers = 15/g' -i /etc/php/7.0/fpm/pool.d/www.conf
+RUN sed 's/pm.max_children = 5/pm.max_children = 50/g' -i /etc/php/7.0/fpm/pool.d/www.conf
+RUN sed 's/pm.start_servers = 2/pm.start_servers = 10/g' -i /etc/php/7.0/fpm/pool.d/www.conf
+RUN sed 's/pm.max_spare_servers = 3/pm.max_spare_servers = 15/g' -i /etc/php/7.0/fpm/pool.d/www.conf
 
 VOLUME ["/run/php", "/srv/www"]
 
