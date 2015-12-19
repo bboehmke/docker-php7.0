@@ -9,7 +9,7 @@ Start the container with:
 docker run -d --name=php7 \
     --restart=always \
     -v /run/php7:/run/php \
-    -v /srv/www:/srv/www
+    -v /srv/www:/srv/www \
     bboehmke/php7.0
 ```
 
